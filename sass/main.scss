@@ -7,9 +7,22 @@ html, body { height: 100%; }
 
 body { font: 16px Helvetica, Arial; }
 
+header {
+	background: #86bf9d;
+	width: 100%;
+	height: 7%;
+	color: #fff;
+	display: table;
+	h2 {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+}
+
 main { 
 	display: flex;
-	height: 100%;
+	height: 88%;
 	flex-direction: row;
 }
 .form-container, .messages { padding: 20px; }
@@ -25,6 +38,7 @@ main {
 	flex: 2;
 	background-color: #eee;
 	border: 6px solid #e2e0e0; 
+	overflow: auto;
 }
 
 input, textarea { 
@@ -50,7 +64,7 @@ form {
 	input[type=submit] { 
 		width: auto; 
 		padding: 10px; 
-		background-color: rgb(75, 200, 17);
+		background-color: #86bf9d;
 		margin-top: 1rem; 
 		border-radius: 8px;
 		color: white;
@@ -67,6 +81,27 @@ form {
 	li:nth-child(odd) { background: #eee; }
 }
 
+footer {
+	background: #676767;
+	color: #fff;
+	height: 5%;
+	width: 100%;
+	display: table;
+	p {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 12px;
+	}
+}
+@media screen and (max-width: 720px) {
+	#app {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
 // imports
 
 @import 'modules/_message';
+

@@ -24,8 +24,9 @@ function appendMessage(message) {
 const vm = new Vue({
     data: {
        socketID: "",
-       message: "",
        nickname: "",
+       message: "",
+       
        messages: []
     },
 
@@ -38,8 +39,9 @@ const vm = new Vue({
             // the double pipe || is an "or" operator
             // if the first value is set, use it. else use whatever comes after the "or" operator
             socket.emit('chat_message', {
+                name: this.nickname, //|| "anonymous"
                 content: this.message,
-                name: this.nickname || "anonymous"
+                
             })
 
             this.message = "";
@@ -57,3 +59,4 @@ const vm = new Vue({
 socket.addEventListener('connected', setUserId);
 socket.addEventListener('disconnect', showDisconnectMessage);
 socket.addEventListener('new_message', appendMessage);
+
